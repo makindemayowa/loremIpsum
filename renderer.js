@@ -12,7 +12,7 @@ const replaceMock = (fileContents, data) => {
 }
 
 exports.renderHtml = (templateName, data, response) => {
-  let fileContents = fs.readFileSync(`./${templateName}.html`, { encoding: 'utf8' });
+  let fileContents = fs.readFileSync(`./templates/${templateName}.html`, { encoding: 'utf8' });
   fileContents = replaceMock(fileContents, data);
   response.write(fileContents);
 }
